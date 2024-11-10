@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Grace</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #f0e3e3;
+            color: #333;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f6c9ef,  #facff2);
+            
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-image: url(../Images/flower2.png);
+            background-size: cover;
+            color: #050600;
+            background-blend-mode:hard-light;
+        }
+
+        header h1 {
+            font-size: 2.9em;
+            font-weight: bold;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #060a01;
+            font-size: 1.5em;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color:rgb(142, 61, 133);
+        }
+
+        /* Quote Styling */
+        .quote {
+            text-align: center;
+            font-size: 1.5em;
+            color: #82ae66;
+            background-color: #eed8ef;
+            padding: 10px;
+            margin: 20px;
+            border:solid blanchedalmond 6px;
+        }
+        
+        /* Main Content Styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            border: circle black 100px;
+        }
+
+        .intro-text {
+            font-size: 1.3em;
+            text-align: center;
+            background-color: bisque;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        hr{height: 20px;}
+
+        /* Product Section Styling */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 45px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            width: 290px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(19, 2, 83, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            grid-template-columns: repeat(4,1fr);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+        /*touch up */
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-description {
+            padding: 15px;
+            color: #333;
+            font-size: 1em;
+        }
+        video{
+            border: solid white 20px;
+
+        }
+
+        #blackdiv4{
+            background-color: #000;
+            height: 600px;
+            align-self: center;
+            text-align: center;
+            color: aliceblue;
+        }
+
+        .about {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.about1{
+
+}
+
+.about h2 {
+    font-size: 2em;
+    color: #0e0102;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.5;
+    background-color: black;
+    color: white;
+    border: solid black 30px;
+}
+
+input[type="Submit"]{
+        background-color: rgb(253, 249, 249);
+        transform: scale(1.05);
+        width: 90px;
+    height:30px;
+    margin-top: 20px;
+    margin-left: 20px;
+        background-color: #fafbf9;
+        border-radius:9px;
+}
+
+
+        /* Footer Styling */
+        footer {
+            
+            padding: 15px;
+            background-color: #000;
+            color: #f9f9f9;
+            margin-top: 10px;
+            height: 330px;
+        
+        }
+        
+.btn{
+    float: right;
+    border-color: #8e2305;
+    color:rgb(31, 8, 106);
+    background-color: #f4ae89;
+    overflow: hidden;
+    
+    transform:SCALE(1.0);
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 45px;
+    padding: 4px;
+
+
+}
+
+.btn::before {
+content: "";
+z-index: -1;
+position: absolute;
+background-color: #333;
+left: 0;
+border-radius: 10px;
+}
+/*glow button*/
+.btn::after{
+    content:"" ;
+    background: linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFF800, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter:blur(8px);
+    animation: glowing 20s linear infinite ;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+#hr3{
+    height: 3px;
+}
+@keyframes glowing {
+    
+    0%{background-position: 0 0;}
+    50%{background-position: 400% 0;}
+    100%{background-position: 0 0;}
+}
+.btn:hover::before{
+    opacity: 1;
+
+}
+.btn:active::after{
+    background: transparent;
+}
+.btn:active{
+    color: #000;
+    text-align: center;
+}
+#d4{
+    padding: 34px;
+}
+#d6{padding: 37px;
+    text-align: center;
+}
+#img23{
+float: right;
+    width: 150px;
+
+}
+.grid1{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GARDEN  &nbspGRACE</h1><nav>
+        <i><a href="./sign.in.html"> <button class="btn">Sign in</i></a>
+        </button>
+        
+            <a id="d6" href="../Flower Grace/pratix page.html">&nbsp&nbsp&nbsp&nbspHome</a>
+            <a id="d6" href="about.html">About</a>
+            <a id="d6" href="../Flower Grace/service.html">Service</a>
+        </nav>
+    </header>
+
+    <div class="quote">
+        <q>Bring nature's beauty to your home</q>
+    </div>
+    <div id="box-container">
+    <div class="container">
+        <div class="intro-text">
+          <i> " These are the most popular flowers and plants "</i>
+        </div>
+<div class="grid1">
+        <!-- Product 1-->
+        <div class="product-card" id="d4">
+            <img src="../Images/image/rose2.jpg" alt="Indoor Plants">
+            <div class="product-description">
+                <i>"Elegance in Midnight":<br></i>
+        The black rose blooms with a mysterious charm, captivating hearts with its shadowed elegance.
+                <p><a href="service.html"  id="contact.html"> Price: $5</a></p>
+            </div>
+        </div>
+
+        <!-- Product 2-->
+        <div class="product-card" id="d4">
+            <img src="../Images/image/rose3.jpg" alt="Indoor Plants">
+            <div class="product-description">
+               <i> Hearts Flame:<br></i>
+              With petals as red as fire, the red rose ignites the soul, each blossom a promise of love, passion, and desire.
+                <p><a href="service.html"  id="contact.html"> Price: $11</a></p>
+            </div>
+        </div>
+
+        <!-- Product 3-->
+        <div class="product-card" id="d4">
+            <img src="../Images/image/imagesmulti.jpg" alt="Indoor Plants">
+            <div class="product-description">
+                <i>Whispers of Grace:</i>
+               Small yet radiant, the pink flower dances softly in the breeze, a gentle reminder of grace in even the tiniest blooms.
+
+
+                <p><a href="service.html"  id="contact.html"> Price: $8</a></p>
+            </div>
+        </div>
+            <!-- Product 4 -->
+            <div class="product-card" id="d4">
+                <img src="../Images/image/indor plants.png" alt="Indoor Plants">
+                <div class="product-description">
+                    <i>Indoor branch:</i> 
+                    Bring the beauty of indoor plants into your space for a calming vibe.
+                    <p><a href="service.html"  id="contact.html"> Price: $10</a></p>
+                </div>
+            </div>
+             <!-- Product 5-->
+            <div class="product-card" id="d4">
+                <img src="../Images/image/plants1.jpg" alt="Indoor Plants">
+                <div class="product-description">
+                   <i> Tropical Tranquility:<br></i>
+          With broad, green leaves that echo the spirit of the tropics, these banana-like plants bring a touch of paradise indoors.
+                    <p><a href="service.html"  id="contact.html"> Price: $20</a></p>
+                </div>
+            </div>
+           <!-- Product 6 -->
+            <div class="product-card" id="d4">
+                <img src="../Images/image/rose1.jpg" alt="Indoor Plants">
+                <div class="product-description">
+                   <i> Velvet Elegance:<br></i>
+           This unique rose, with petals deep as midnight and soft as dawn, combines black, purple, and pink in a stunning tribute to beauty’s complexity and grace.
+                
+                    <p><a href="service.html"  id="contact.html"> Price: $19</a></p>
+                </div>
+            </div>
+
+            <!-- Product 7-->
+            <div class="product-card" id="d4">
+                <img src="../Images/image/plants2.webp" alt="Indoor Plants">
+                <div class="product-description">
+                    <i>Pockets of Peace:<br></i>
+                These small indoor plants bring serenity and softness to a room, quietly thriving and reminding us of the beauty in simplicity.
+                    <p><a href="service.html"  id="contact.html"> Price: $25</a></p>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card" id="d4">
+                
+                <img src="../Images/image/plants4.webp" alt="Indoor Plants">
+                <div class="product-description">
+                    <i>Natures Ruby:<br></i>
+              Like precious rubies in the garden, these red blossoms captivate with their rich color and bring a touch of natural luxury to any home.
+                    <p><a href="service.html"  id="contact.html"> Price: $34</a></p>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card" id="d4">
+                <img src="../Images/image/imagesflower.jpg" alt="Indoor Plants">
+                <div class="product-description">
+                    <i> Pure Serenity:<br></i>
+                    With each bloom, the lotus embodies peace and tranquility, its soft petals floating on the surface, a symbol of spiritual awakening and inner calm.
+                    <p><a href="service.html"  id="contact.html"> Price: $12</a></p>
+                </div>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product-card" id="d4">
+                <img src="../Images/image/plants6.avif" alt="Indoor Plants">
+                <div class="product-description">
+                    <i>Tropical Majesty:<br></i>
+          Like a tropical forest in miniature, these indoor plants boast large, glossy leaves that bring both bold beauty and refreshing calm to your space.
+                    <p><a href="service.html"  id="contact.html"> Price: $40</a></p>
+                </div>
+            </div>
+
+            <!-- Product 11 -->
+            <div class="product-card" id="d4">
+                <img src="../Images/image/plants3.jpg" alt="Indoor Plants">
+                <div class="product-description">
+                    <i>Symbols of Prosperity:<br></i>
+                With their elegant leaves and gentle growth, these plants symbolize good fortune
+                    <p><a href="service.html"  id="contact.html"> Price: $20</a></p>
+                </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product-card" id="d4">
+                <img src="../Images/image/imagesfullu.jpg" alt="Indoor Plants">
+                <div class="product-description">
+                   <i> Sunshine in Bloom:<br></i>
+            With their golden petals and towering stems, sunflowers bring a burst of sunlight into your home, brightening any room with their cheerful presence.
+            
+                    <p><a href="service.html"  id="contact.html"> Price: $25</a></p>
+                </div>
+            </div>
+
+             <!-- Product 13 -->
+             <div class="product-card" id="d4">
+                <img src="../Images/image/images3flowerss.jpg" alt="Indoor Plants">
+                <div class="product-description">
+                   <i> Fragrance of the Night:<br></i>
+                    Jasmine , This are known by there fragrance By this your morning fresh 
+                    <p><a href="service.html"  id="contact.html"> Price: $23</a></p>
+                </div>
+            </div>
+
+             <!-- Product 14 -->
+             <div class="product-card" id="d4">
+                <img src="../Images/image/love 54.jpg" alt="Indoor Plants">
+                <div class="product-description">
+                   <i> Roses bouquet :<br></i>
+                    Make your valentine day special by Bring this bouquet and make your partner happy
+
+                    <p><a href="service.html"  id="contact.html"> Price: $10</a></p>
+                </div>
+            </div>
+             <!-- Product 15 -->
+             <div class="product-card" id="d4">
+                <img src="../Images/image/plants7.jpg" alt="Indoor Plants">
+                <div class="product-description">
+                  <i> Positivity plant :<br></i>
+                   Bring this plant and spreat Positivity in your Home with the help of natural beauty..
+                    <p><a href="service.html"  id="contact.html"> Price: $25</a></p>
+                </div>
+            </div>
+            </div>
+<br>
+        <center>    <video autoplay loop muted src="../Media/istockphoto-1334525208-640_adpp_is.mp4" width="1000px"></video></center>
+        </div>
+    </div>
+
+</div>
+
+    
+        <!-- About Section -->
+        <section id="about1" class="about">
+            <h2><u>About </u></h2>
+            <p>
+              At Garden Grace, we believe that nature's beauty should be accessible to everyone. 
+                Our passion for flowers and plants drives us to curate a stunning collection of 
+                the most popular and exquisite varieties. Whether you are looking to brighten 
+                your home, find the perfect gift, or simply indulge in the beauty of nature, 
+                we have something special for you.
+            </p>
+        
+            <p>
+    
+                Our mission is to bring the joy of gardening and the serenity of nature into 
+                your living space. We carefully select each plant and flower to ensure they 
+                meet our high standards of quality and beauty. From elegant roses to vibrant 
+                indoor plants, our collection is designed to inspire and uplift.
+            </p>
+            <p>
+                Join us on this journey to celebrate the beauty of nature and transform your 
+                home into a garden of grace. Thank you for choosing Garden Grace!
+            </p>
+            <a href="about.html"><input type="Submit" value="Read more"></a>
+
+        </section>
+    
+        <!-- Product Section -->
+        <div class="products">
+            <!-- Product Cards go here -->
+        </div>
+    </div>
+
+    <footer>
+        <hr id="hr3">
+       <center> Thanks for visiting are website</center>
+       <hr id="hr3">
+       <br>
+     <details></details>Contact Number ~ 9015903820<br>
+     Owner of this company ~ Ansh soni<br>
+     <img id="img23" src="../Images/image/cantact us.webp"><br>
+     My Gmail ~ Anshsoni5665@gmail.com<br>
+     My instagram ID ~ _Nothing._.bro_<br>
+     This website is all about flowers and plants......<br><br>
+     <hr id="hr3">
+       <center> &copy; 2024 Garden Grace</center>
+       <hr id="hr3">
+    </footer>
+</body>
+
+</html>

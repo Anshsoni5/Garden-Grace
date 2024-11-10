@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    background-color: black;
+}
+    
+    #maindiv{
+        background-color:white;
+        width: 50%;
+    }
+    h1{
+        
+    }
+    form{
+    padding:23px;
+        text-align: left;
+    }
+    label{
+        display: block;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    input[type="text"],input[type="email"],input[type="password"],select{
+        width: 100%;
+        height:40px ;
+    
+    }
+    textarea{
+        width: 100%;
+    }
+    input[type="submit"], input[type="reset"]{
+        background-color: rgb(141, 169, 28);
+        color: white;
+        padding: 10px;
+        width: 280px;
+
+    }
+    input[type="submit"]:hover{
+        background-color: red;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+    .error{
+        color: red;
+        font-size: 16px;
+    }
+    </style>
+<body><center>
+
+    <div id="maindiv">
+       <form onsubmit="return(sub())" name="myform">
+        <h2><i>HOME &nbspSERVICE</i></h2>
+            <lable for="name">Name</lable>
+            <input type="text" name="name" id="name" placeholder="Full Name">
+            <span class="error" id="nameerror"></span>
+        
+
+            <label for="email"> Email</label>
+            <input type="email" name="email"
+            id="email" placeholder="Email">
+            <span class="error" id="emailerror"></span>
+        
+
+            <label for="password"> Password</label>
+            <input type="Password" name="Password"
+            id="Password">
+            <span class="error" id="passworderror"></span>
+        
+<label for=" phone number"> Number:</label>
+<input type=" phone number" name=" phone number" id="phone number"
+ placeholder="Your number">
+ <span class="error" id="numbererror"></span>
+
+            
+    <label for="problem"> Address:</label>
+<textarea name="address" id="address"cols="20" rows="5">
+</textarea>
+<span class="error" id="textareaerror"></span>
+
+<input type="Submit" value="Submit Form">
+        </form>
+    </div>
+    </center>
+</body>
+</html>
